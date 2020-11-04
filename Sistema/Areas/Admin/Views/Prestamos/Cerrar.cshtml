@@ -1,0 +1,38 @@
+﻿@model prestamos
+@{
+      ViewBag.Title = "cerrar prestamo";
+}
+
+<div id="yo" class="page">
+
+    <ol class="breadcrumb">
+        <li><a href="~/admin/prestamos">Prestamos</a></li>
+        <li class="active">"Cerrar Prestamo"</li>
+    </ol>
+
+    @using (Html.BeginForm("CerrarCaso", "prestamos", FormMethod.Post))
+    {
+
+        <div>
+
+            @Html.HiddenFor(x => x.idPrestamos)
+
+
+            <div class="form-group">
+                @Html.HiddenFor(x => x.estatus, new { Value = "2" })
+                @Html.Label("Fecha de recepción del prestamo")
+                @Html.EditorFor(x => x.fecha_devolucion, "{0:yyyy-MM-dd}", new { htmlAttributes = new { @class = "form-control", @type = "date", @Value = DateTime.Now.ToString("yyyy-MM-dd") } })
+                @Html.ValidationMessageFor(x => x.fecha_devolucion, null, new { @class = "label label-danger" })
+            </div>
+            <div class="form-group">
+                @Html.Label("Comentario sobre la devolución")
+                @Html.TextBoxFor(x => x.nota_devolucion, new { @class = "form-control", placeholder = "Nota devolución" })
+                @Html.ValidationMessageFor(x => x.nota_devolucion, null, new { @class = "label label-danger" })
+            </div>
+        </div>
+
+        <div class="text-right well well-sm">
+            <button data-ajax="true" class="btn btn-primary">Guardar</button>
+        </div>
+    }
+</div>

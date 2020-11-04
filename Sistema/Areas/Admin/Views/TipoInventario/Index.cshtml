@@ -1,0 +1,65 @@
+﻿
+@{
+    ViewBag.Title = "Tipo Inventario";
+}
+
+<div id="experiencia" class="page">
+
+    <h1 class="page-header remove-margin">
+        <a class="btn btn-primary pull-right" href="~/admin/tipoInventario/crud">Agregar</a>
+        @ViewBag.Title
+    </h1>
+
+    <div id="list"></div>
+</div>
+
+<script>
+    $(document).ready(function () {
+        var agrid = $("#list").anexGrid({
+            columnas: [
+                { leyenda: 'Nombre', columna: 'nombre_tipo', ordenable: true },
+                { leyenda: 'Descripcion', columna: 'descripcion', ordenable: true },
+                { style: 'width:60px' },
+            ],
+            modelo: [
+                {
+                    propiedad: 'nombre_tipo', formato: function (tr, obj, valor) {
+                        return anexGrid_link({
+                            href: '@Url.Content("~/admin/tipoInventario/crud/")' + obj.idTipoInventario,
+                            contenido: valor
+                        });
+                    }
+                },
+                { propiedad: 'descripcion' },
+                @*{
+                    formato: function (tr, obj, valor) {
+                        return anexGrid_link({
+                            href: '@Url.Content("~/admin/tipoInventario/eliminar/")' + obj.idTipoInventario,
+                            contenido: '<i class="fa fa-trash"></i>',
+                            class: 'btn btn-danger btn-xs btn-block btn-eliminar',
+                        });
+                    }
+                },*@
+            ],
+            url: '@Url.Content("~/admin/tipoInventario/listar/")',
+            paginable: true,
+            limite: [20, 60, 100],
+            columna: 'idTipoInventario',
+            columna_orden: 'DESC'
+        });
+
+        agrid.tabla().on('click', '.btn-eliminar', function () {
+            if (!confirm('¿Está seguro de eliminar este registro?'))
+            {
+                return;
+            }
+
+            $.post($(this).attr('href'), function (r) {
+                if (r.response) agrid.refrescar();
+            }, 'json')
+
+            return false;
+        })
+    })
+</script>
+

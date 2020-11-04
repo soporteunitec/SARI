@@ -1,0 +1,89 @@
+﻿@model inventarios
+@{
+    ViewBag.Title = "Crear inventario";
+    List<tipoInventario> tipoInventario = ViewBag.tipoInventario;
+    List<usuarios> usuarios = ViewBag.usuarios;
+
+}
+
+<div id="yo" class="page">
+
+    <ol class="breadcrumb">
+        <li><a href="~/admin/inventario">Inventario</a></li>
+        <li class="active">"Nuevo registro"</li>
+    </ol>
+
+    @using (Html.BeginForm("guardar", "inventario", FormMethod.Post))
+    {
+
+        <div>
+            @Html.HiddenFor(x => x.idInventario)
+            @if (Model.idUsuario == null)
+            {
+                @Html.HiddenFor(x => x.idUsuario, new { Value = Helper.SessionHelper.GetUser() })
+            }
+            <div class="form-group">
+                @Html.Label("Nombre")
+                @Html.TextBoxFor(x => x.nombre_inventario, new { @class = "form-control", placeholder = "Ingrese el nombre" })
+                @Html.ValidationMessageFor(x => x.nombre_inventario, null, new { @class = "label label-danger" })
+            </div>
+            <div class="form-group">
+                @Html.Label("Cantidad")
+                @Html.TextBoxFor(x => x.cantidad, new { @class = "form-control", placeholder = "cantidad" })
+                @Html.ValidationMessageFor(x => x.cantidad, null, new { @class = "label label-danger" })
+            </div>
+            <div class="form-group">
+                @Html.Label("Serial")
+                @Html.TextAreaFor(x => x.serial, new { @class = "form-control", placeholder = "Serial" })
+                @Html.ValidationMessageFor(x => x.serial, null, new { @class = "label label-danger" })
+            </div>
+
+            <div class="form-group">
+                @Html.Label("Ubicación")
+                @Html.TextAreaFor(x => x.ubicacion, new { @class = "form-control", placeholder = "Ubicación" })
+                @Html.ValidationMessageFor(x => x.ubicacion, null, new { @class = "label label-danger" })
+            </div>
+            <div class="form-group">
+                @Html.Label("Fecha de registro")
+                @if (Model.idInventario > 0)
+                {
+                    @Html.EditorFor(x => x.fecha_creacion, "{0:yyyy/MM/dd}", new { htmlAttributes = new { @class = "form-control", @type = "date" } })
+                }
+                else
+                {
+                    @Html.EditorFor(x => x.fecha_creacion, "{0:yyyy/MM/dd}", new { htmlAttributes = new { @class = "form-control", @type = "date", @Value = DateTime.Now.ToString("yyyy-MM-dd") } })
+                }
+                @Html.ValidationMessageFor(x => x.fecha_creacion, null, new { @class = "label label-danger" })
+            </div>
+            <div class="form-group">
+                @Html.Label("Departamentos")
+                <select name="idTipoInventario" class="form-control">
+                    @foreach (var p in tipoInventario)
+                    {
+                        <option selected value="@p.idTipoInventario">@p.nombre_tipo</option>
+                    }
+                </select>
+            </div>
+            @if (Model.idUsuario != null)
+            {
+                <div class="form-group">
+                    @Html.Label("Registrado por")
+                    <select name="idUsuario" class="form-control">
+                        @foreach (var p in usuarios)
+                    {
+                            <option selected value="@p.idUsuario">@p.nombre</option>
+                        }
+                    </select>
+                </div>
+            }
+
+
+
+
+        </div>
+
+        <div class="text-right well well-sm">
+            <button data-ajax="true" class="btn btn-primary">Guardar</button>
+        </div>
+    }
+</div>

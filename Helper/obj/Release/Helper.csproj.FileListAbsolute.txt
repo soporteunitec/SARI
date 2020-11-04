@@ -1,0 +1,10 @@
+C:\Users\CASA\Documents\Visual Studio 2015\Projects\Sistema\Helper\bin\Release\Helper.dll
+C:\Users\CASA\Documents\Visual Studio 2015\Projects\Sistema\Helper\bin\Release\Helper.pdb
+C:\Users\CASA\Documents\Visual Studio 2015\Projects\Sistema\Helper\obj\Release\Helper.csprojResolveAssemblyReference.cache
+C:\Users\CASA\Documents\Visual Studio 2015\Projects\Sistema\Helper\obj\Release\Helper.dll
+C:\Users\CASA\Documents\Visual Studio 2015\Projects\Sistema\Helper\obj\Release\Helper.pdb
+L:\Sistema\Helper\bin\Release\Helper.dll
+L:\Sistema\Helper\bin\Release\Helper.pdb
+L:\Sistema\Helper\obj\Release\Helper.csprojResolveAssemblyReference.cache
+L:\Sistema\Helper\obj\Release\Helper.dll
+L:\Sistema\Helper\obj\Release\Helper.pdb

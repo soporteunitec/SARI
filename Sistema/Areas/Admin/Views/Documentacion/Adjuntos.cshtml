@@ -1,0 +1,36 @@
+﻿ 
+@model AdjuntosDocumentacion
+@{
+    List<AdjuntosDocumentacion> adjuntos = ViewBag.Adjuntos;
+    int idDocumento = ViewBag.idDocumento;
+    ViewBag.Title = "Adjuntos";
+}
+
+@using (Html.BeginForm("GuardarAdjunto", "documentacion", FormMethod.Post))
+{
+
+    @Html.HiddenFor(x => x.idAdjuntosDocumentacion)
+    @Html.HiddenFor(x => x.idDocumentacion, new { Value = idDocumento })
+    <div class="form-group">
+        <label>Seleccione un documento a subir</label>
+        <input type="file" name="Archivo" />
+    </div>
+    <div class="text-right">
+        <button data-ajax="true" data-confirm="¿Esta seguro de adjuntar este archivo al alumno?" type="submit" class="btn btn-primary">Guardar</button>
+    </div>
+}
+<hr />
+
+<ul class="list-group">
+    @foreach (var a in adjuntos)
+    {
+        <li class="list-group-item">
+            <a href="~/Areas/Admin/Uploads/@a.archivo" target="_blank">
+                @a.archivo
+            </a>
+            <a onclick="return confirm('¿Desea eliminar este registro?');" class="btn btn-xs btn-danger" href=@Url.Action("EliminarAdjunto","documentacion", new {id = a.idAdjuntosDocumentacion , id_documento = idDocumento })>Eliminar</a>
+        </li>
+    }
+</ul>
+
+ 

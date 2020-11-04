@@ -1,0 +1,24 @@
+C:\Users\CASA\Documents\Visual Studio 2015\Projects\Sistema\Model\bin\Release\Model.dll.config
+C:\Users\CASA\Documents\Visual Studio 2015\Projects\Sistema\Model\bin\Release\Model.dll
+C:\Users\CASA\Documents\Visual Studio 2015\Projects\Sistema\Model\bin\Release\Model.pdb
+C:\Users\CASA\Documents\Visual Studio 2015\Projects\Sistema\Model\bin\Release\EntityFramework.dll
+C:\Users\CASA\Documents\Visual Studio 2015\Projects\Sistema\Model\bin\Release\EntityFramework.SqlServer.dll
+C:\Users\CASA\Documents\Visual Studio 2015\Projects\Sistema\Model\bin\Release\Helper.dll
+C:\Users\CASA\Documents\Visual Studio 2015\Projects\Sistema\Model\bin\Release\Helper.pdb
+C:\Users\CASA\Documents\Visual Studio 2015\Projects\Sistema\Model\bin\Release\EntityFramework.xml
+C:\Users\CASA\Documents\Visual Studio 2015\Projects\Sistema\Model\bin\Release\EntityFramework.SqlServer.xml
+C:\Users\CASA\Documents\Visual Studio 2015\Projects\Sistema\Model\obj\Release\Model.csprojResolveAssemblyReference.cache
+C:\Users\CASA\Documents\Visual Studio 2015\Projects\Sistema\Model\obj\Release\Model.dll
+C:\Users\CASA\Documents\Visual Studio 2015\Projects\Sistema\Model\obj\Release\Model.pdb
+L:\Sistema\Model\bin\Release\Model.dll.config
+L:\Sistema\Model\bin\Release\Model.dll
+L:\Sistema\Model\bin\Release\Model.pdb
+L:\Sistema\Model\bin\Release\EntityFramework.dll
+L:\Sistema\Model\bin\Release\EntityFramework.SqlServer.dll
+L:\Sistema\Model\bin\Release\Helper.dll
+L:\Sistema\Model\bin\Release\Helper.pdb
+L:\Sistema\Model\bin\Release\EntityFramework.xml
+L:\Sistema\Model\bin\Release\EntityFramework.SqlServer.xml
+L:\Sistema\Model\obj\Release\Model.csprojResolveAssemblyReference.cache
+L:\Sistema\Model\obj\Release\Model.dll
+L:\Sistema\Model\obj\Release\Model.pdb

@@ -1,0 +1,21 @@
+﻿@model usuarios
+<div id="yo" class="page">
+
+
+    @using (Html.BeginForm("CambiarClave", "usuario", FormMethod.Post))
+    {
+
+        <div>
+            @Html.HiddenFor(x => x.idUsuario, new { Value = Helper.SessionHelper.GetUser() })
+            <div class="form-group">
+                @Html.LabelFor(x => x.clave, new { Value = "Nueva clave" })
+                @Html.PasswordFor(x => x.clave, new { @class = "form-control", placeholder = "Ingrese su clave" })
+                @Html.ValidationMessageFor(x => x.clave, null, new { @class = "label label-danger" })
+            </div>
+        </div>
+
+        <div class="text-right well well-sm">
+            <button data-ajax="true" class="btn btn-primary">Cambiar</button>
+        </div>
+    }
+</div>

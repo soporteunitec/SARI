@@ -1,0 +1,176 @@
+﻿@{
+    ViewBag.Title = "Inicio";
+    int cantidadAbiertos = ViewBag.ReportesAbiertos;
+    int cantidadCerrados = ViewBag.ReportesCerrados;
+    List<dptoConsulta> CantidadAbiertosDpto = ViewBag.ReportesAbiertosDpto;
+    List<dptoConsulta> CantidadCerradosDpto = ViewBag.ReportesCerradosDpto;
+    List<dptoConsulta> CantidadCerradosPorTecnico = ViewBag.ReportesCerradosPorTecnico;
+    int cantidadAbiertoPrestamos = ViewBag.PrestamosAbiertos;
+    int cantidadCerradosPrestamos = ViewBag.PrestamosCerrados;
+    DateTime inicio = ViewBag.inicio;
+    DateTime fin = ViewBag.fin;
+    bool pdf = ViewBag.pdf;
+
+}
+
+ 
+
+        <div class="page-header">
+
+    @if (pdf == false)
+    {
+        <form action="~/admin/inicio/index">
+            <h1>
+                Descripción de la semana<small> <input type="date" id="inicio" name="inicio" value="@inicio.ToString("yyyy-MM-dd")"> a <input type="date" id="fin" name="fin" value="@fin.ToString("yyyy-MM-dd")"></small>
+                <button class="btn btn-primary" type="submit">Filtrar</button>
+            </h1>
+        </form>
+    }
+    else
+    {
+        <h3>
+            Descripción de la semana<small> <input type="date" id="inicio" name="inicio" value="@inicio.ToString("yyyy-MM-dd")"> a <input type="date" id="fin" name="fin" value="@fin.ToString("yyyy-MM-dd")"></small>
+        </h3>
+    }
+
+
+
+
+
+    @{
+        double total = cantidadAbiertos + cantidadCerrados;
+        double porcentajeA = cantidadAbiertos / total * 100;
+        double porcentajeC = cantidadCerrados / total * 100;
+        int ap = 0;
+        if (double.Equals(double.NaN, porcentajeA))
+        {
+            ap = 0;
+        }
+        else
+        {
+            ap = Convert.ToInt32(porcentajeA);
+        }
+        int bp = 0;
+        if (double.Equals(double.NaN, porcentajeC))
+        {
+            bp = 0;
+        }
+        else
+        {
+            bp = Convert.ToInt32(porcentajeC);
+        }
+
+    }
+    @if (total > 0)
+            {
+        <h3>Total de casos abiertos y cerrados</h3>
+
+                <div class="progress">
+
+                    <div class="progress-bar progress-bar-success" style="width: @ap%">
+                        Abiertos: @cantidadAbiertos
+                    </div>
+                    <div class="progress-bar progress-bar-danger" style="width: @bp%">
+                        Cerrados: @cantidadCerrados
+                    </div>
+                </div>
+    }
+
+
+    @if (CantidadAbiertosDpto.Count > 0)
+    {
+        <h3>Casos abiertos por departamentos</h3>
+        <ul class="list-group">
+            @foreach (var a in CantidadAbiertosDpto)
+            {
+                <li class="list-group-item">
+                    <span class="badge">@a.cantidad</span>
+                    @a.nombre
+                </li>
+            }
+        </ul>
+    }
+
+    @if (CantidadCerradosDpto.Count > 0)
+    {
+        <h3>Casos cerrados por departamentos</h3>
+        <ul class="list-group">
+            @foreach (var a in CantidadCerradosDpto)
+            {
+                <li class="list-group-item">
+                    <span class="badge">@a.cantidad</span>
+                    @a.nombre
+                </li>
+            }
+        </ul>
+    }
+
+
+    @if (CantidadCerradosPorTecnico.Count > 0)
+    {
+        <h3>Casos cerrados por Técnico</h3>
+        <ul class="list-group">
+            @foreach (var a in CantidadCerradosPorTecnico)
+            {
+                <li class="list-group-item">
+                    <span class="badge">@a.cantidad</span>
+                    @a.nombre
+                </li>
+            }
+        </ul>
+    }
+
+
+    @{
+        double totalPrestamos = cantidadAbiertoPrestamos + cantidadCerradosPrestamos;
+        double porcentajeAPrestamos = cantidadAbiertoPrestamos / totalPrestamos * 100;
+        double porcentajeCPrestamos = cantidadCerradosPrestamos / totalPrestamos * 100;
+
+        int apPrestamos = 0;
+        if (double.Equals(double.NaN, porcentajeAPrestamos))
+        {
+            apPrestamos = 0;
+        }
+        else
+        {
+            apPrestamos = Convert.ToInt32(porcentajeAPrestamos);
+        }
+        int bpPrestamos = 0;
+        if (double.Equals(double.NaN, porcentajeCPrestamos))
+        {
+            bpPrestamos = 0;
+        }
+        else
+        {
+            bpPrestamos = Convert.ToInt32(porcentajeCPrestamos);
+        }
+        //int apPrestamos = Convert.ToInt32(porcentajeAPrestamos);
+        //int bpPrestamos = Convert.ToInt32(porcentajeCPrestamos);
+
+
+    }
+    @if (totalPrestamos > 0)
+            {
+        <h3>Total de prestamos entregados y recibidos</h3>
+
+        <div class="progress">
+
+            <div class="progress-bar progress-bar-success" style="width: @apPrestamos%">
+                Entregados: @cantidadAbiertoPrestamos
+            </div>
+            <div class="progress-bar progress-bar-danger" style="width: @bpPrestamos%">
+                Recibidos: @cantidadCerradosPrestamos
+            </div>
+        </div>
+    }
+
+
+            @if (pdf == false)
+            {
+           <a href="~/admin/inicio/ExportarPDF/" target="_blank" class="btn btn-danger">
+                <i class="fa fa-file-pdf-o"></i> <span class="hidden-xs hidden-sm">Descargar en PDF</span>
+            </a>
+            }
+            
+
+</div>

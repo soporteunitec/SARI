@@ -1,0 +1,24 @@
+c:\Users\CASA\documents\visual studio 2015\Projects\Sistema\Model\bin\Debug\Model.dll
+c:\Users\CASA\documents\visual studio 2015\Projects\Sistema\Model\bin\Debug\Model.pdb
+c:\Users\CASA\documents\visual studio 2015\Projects\Sistema\Model\bin\Debug\EntityFramework.dll
+c:\Users\CASA\documents\visual studio 2015\Projects\Sistema\Model\bin\Debug\EntityFramework.SqlServer.dll
+c:\Users\CASA\documents\visual studio 2015\Projects\Sistema\Model\bin\Debug\EntityFramework.xml
+c:\Users\CASA\documents\visual studio 2015\Projects\Sistema\Model\bin\Debug\EntityFramework.SqlServer.xml
+c:\Users\CASA\documents\visual studio 2015\Projects\Sistema\Model\obj\Debug\Model.csprojResolveAssemblyReference.cache
+c:\Users\CASA\documents\visual studio 2015\Projects\Sistema\Model\obj\Debug\Model.dll
+c:\Users\CASA\documents\visual studio 2015\Projects\Sistema\Model\obj\Debug\Model.pdb
+C:\Users\CASA\documents\visual studio 2015\Projects\Sistema\Model\bin\Debug\Helper.dll
+C:\Users\CASA\documents\visual studio 2015\Projects\Sistema\Model\bin\Debug\Helper.pdb
+C:\Users\CASA\Documents\Visual Studio 2015\Projects\Sistema\Model\bin\Debug\Model.dll.config
+L:\Sistema\Model\bin\Debug\Model.dll.config
+L:\Sistema\Model\bin\Debug\Model.dll
+L:\Sistema\Model\bin\Debug\Model.pdb
+L:\Sistema\Model\bin\Debug\EntityFramework.dll
+L:\Sistema\Model\bin\Debug\EntityFramework.SqlServer.dll
+L:\Sistema\Model\bin\Debug\Helper.dll
+L:\Sistema\Model\bin\Debug\Helper.pdb
+L:\Sistema\Model\bin\Debug\EntityFramework.xml
+L:\Sistema\Model\bin\Debug\EntityFramework.SqlServer.xml
+L:\Sistema\Model\obj\Debug\Model.csprojResolveAssemblyReference.cache
+L:\Sistema\Model\obj\Debug\Model.dll
+L:\Sistema\Model\obj\Debug\Model.pdb

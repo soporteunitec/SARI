@@ -1,0 +1,202 @@
+﻿
+@{
+    ViewBag.Title = "Logros";
+    int cantidadCerrados = ViewBag.ReportesCerrados;
+}
+
+<div class="row">
+    <div class="col-md-1"></div>
+    <div class="col-md-10">
+
+        <div class="jumbotron">
+            <h1>Tienes <span class="label label-default">@cantidadCerrados</span> casos cerrados</h1>
+        </div>
+
+        <div class="row">
+
+
+            @*Logro 1*@
+            @if (cantidadCerrados >= 1)
+            {
+            <div class="col-xs-6 col-md-3">
+                <a href="#" class="thumbnail">
+                    <img src="~/Areas/Admin/Assets/images/logro1.gif" style="width:150px;height:150px">
+                    <p class="text-center">¡Felicidades eres de soporte!</p>
+                </a>
+            </div>
+            }
+            else
+            {
+                <div class="col-xs-6 col-md-3">
+                    <a href="#" class="thumbnail">
+                        <img src="~/Areas/Admin/Assets/images/gris.png" style="width:150px;height:150px">
+                        <p class="text-center">Tienes que tener 1 casos cerrados para este logró</p>
+                    </a>
+                </div>
+            }
+
+            @*Logro 2*@
+            @if (cantidadCerrados >= 5)
+            {
+                <div class="col-xs-6 col-md-3">
+                    <a href="#" class="thumbnail">
+                        <img src="~/Areas/Admin/Assets/images/logro2.gif" style="width:150px;height:150px">
+                        <p class="text-center">Mientras funcione</p>
+                    </a>
+                </div>
+            }
+            else
+            {
+                <div class="col-xs-6 col-md-3">
+                    <a href="#" class="thumbnail">
+                        <img src="~/Areas/Admin/Assets/images/gris.png" style="width:150px;height:150px">
+                        <p class="text-center">Tienes que tener 5 casos cerrados para este logró</p>
+                    </a>
+                </div>
+            }
+
+            @*Logro 3*@
+            @if (cantidadCerrados >= 10)
+            {
+                <div class="col-xs-6 col-md-3">
+                    <a href="#" class="thumbnail">
+                        <img src="~/Areas/Admin/Assets/images/logro3.gif" style="width:150px;height:150px">
+                        <p class="text-center">Dos cabezas piensan mejor que una</p>
+                    </a>
+                </div>
+            }
+            else
+            {
+                <div class="col-xs-6 col-md-3">
+                    <a href="#" class="thumbnail">
+                        <img src="~/Areas/Admin/Assets/images/gris.png" style="width:150px;height:150px">
+                        <p class="text-center">Tienes que tener 10 casos cerrados para este logró</p>
+                    </a>
+                </div>
+            }
+
+            @*Logro 4*@
+            @if (cantidadCerrados >= 30)
+            {
+                <div class="col-xs-6 col-md-3">
+                    <a href="#" class="thumbnail">
+                        <img src="~/Areas/Admin/Assets/images/logro4.gif" style="width:150px;height:150px">
+                        <p class="text-center">Puedes pedir cambio a equivalencias si quieres</p>
+                    </a>
+                </div>
+            }
+            else
+            {
+                <div class="col-xs-6 col-md-3">
+                    <a href="#" class="thumbnail">
+                        <img src="~/Areas/Admin/Assets/images/gris.png" style="width:150px;height:150px">
+                        <p class="text-center">Tienes que tener 30 casos cerrados para este logró</p>
+                    </a>
+                </div>
+            }
+
+            @*Logro 5*@
+            @if (cantidadCerrados >= 60)
+            {
+                <div class="col-xs-6 col-md-3">
+                    <a href="#" class="thumbnail">
+                        <img src="~/Areas/Admin/Assets/images/logro5.gif" style="width:150px;height:150px">
+                        <p class="text-center">Estas mejorando :)</p>
+                    </a>
+                </div>
+            }
+            else
+            {
+                <div class="col-xs-6 col-md-3">
+                    <a href="#" class="thumbnail">
+                        <img src="~/Areas/Admin/Assets/images/gris.png" style="width:150px;height:150px">
+                        <p class="text-center">Tienes que tener 60 casos cerrados para este logró</p>
+                    </a>
+                </div>
+            }
+
+            @*Logro 6*@
+            @if (cantidadCerrados >= 120)
+            {
+                <div class="col-xs-6 col-md-3">
+                    <a href="#" class="thumbnail">
+                        <img src="~/Areas/Admin/Assets/images/logro6.gif" style="width:150px;height:150px">
+                        <p class="text-center">Ya sabes lo que haces</p>
+                    </a>
+                </div>
+            }
+            else
+            {
+                <div class="col-xs-6 col-md-3">
+                    <a href="#" class="thumbnail">
+                        <img src="~/Areas/Admin/Assets/images/gris.png" style="width:150px;height:150px">
+                        <p class="text-center">Tienes que tener 120 casos cerrados para este logró</p>
+                    </a>
+                </div>
+            }
+
+            @*Logro 7*@
+            @if (cantidadCerrados >= 320)
+            {
+                <div class="col-xs-6 col-md-3">
+                    <a href="#" class="thumbnail">
+                        <img src="~/Areas/Admin/Assets/images/logro7.gif" style="width:150px;height:150px">
+                        <p class="text-center">Este camino es muy largo, pero vale la pena</p>
+                    </a>
+                </div>
+            }
+            else
+            {
+                <div class="col-xs-6 col-md-3">
+                    <a href="#" class="thumbnail">
+                        <img src="~/Areas/Admin/Assets/images/gris.png" style="width:150px;height:150px">
+                        <p class="text-center">Tienes que tener 320 casos cerrados para este logró</p>
+                    </a>
+                </div>
+            }
+
+            @*Logro 8*@
+            @if (cantidadCerrados >= 650)
+            {
+                <div class="col-xs-6 col-md-3">
+                    <a href="#" class="thumbnail">
+                        <img src="~/Areas/Admin/Assets/images/logro8.gif" style="width:150px;height:150px">
+                        <p class="text-center">Has llegado muy lejos</p>
+                    </a>
+                </div>
+            }
+            else
+            {
+                <div class="col-xs-6 col-md-3">
+                    <a href="#" class="thumbnail">
+                        <img src="~/Areas/Admin/Assets/images/gris.png" style="width:150px;height:150px">
+                        <p class="text-center">Tienes que tener 650 casos cerrados para este logró</p>
+                    </a>
+                </div>
+            }
+
+            @*Logro 9*@
+            @if (cantidadCerrados >= 1000)
+            {
+                <div class="col-xs-6 col-md-3">
+                    <a href="#" class="thumbnail">
+                        <img src="~/Areas/Admin/Assets/images/logro9.jpg" style="width:150px;height:150px">
+                        <p class="text-center">Lo has logrado... llegaste a la cima</p>
+                    </a>
+                </div>
+            }
+            else
+            {
+                <div class="col-xs-6 col-md-3">
+                    <a href="#" class="thumbnail">
+                        <img src="~/Areas/Admin/Assets/images/gris.png" style="width:150px;height:150px">
+                        <p class="text-center">Tienes que tener 1000 casos cerrados para este logró</p>
+                    </a>
+                </div>
+            }
+
+    </div>
+    <div class="col-md-1"></div>
+</div>
+
+

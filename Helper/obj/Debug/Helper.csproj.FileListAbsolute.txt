@@ -1,0 +1,10 @@
+C:\Users\CASA\documents\visual studio 2015\Projects\Sistema\Helper\bin\Debug\Helper.dll
+C:\Users\CASA\documents\visual studio 2015\Projects\Sistema\Helper\bin\Debug\Helper.pdb
+C:\Users\CASA\documents\visual studio 2015\Projects\Sistema\Helper\obj\Debug\Helper.dll
+C:\Users\CASA\documents\visual studio 2015\Projects\Sistema\Helper\obj\Debug\Helper.pdb
+C:\Users\CASA\Documents\Visual Studio 2015\Projects\Sistema\Helper\obj\Debug\Helper.csprojResolveAssemblyReference.cache
+L:\Sistema\Helper\bin\Debug\Helper.dll
+L:\Sistema\Helper\bin\Debug\Helper.pdb
+L:\Sistema\Helper\obj\Debug\Helper.csprojResolveAssemblyReference.cache
+L:\Sistema\Helper\obj\Debug\Helper.dll
+L:\Sistema\Helper\obj\Debug\Helper.pdb

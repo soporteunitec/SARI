@@ -1,0 +1,505 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+This file is used by the publish/package process of your Web project. You can customize the behavior of this process
+by editing this MSBuild file. In order to learn more about this please visit http://go.microsoft.com/fwlink/?LinkID=208121. 
+-->
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <TimeStampOfAssociatedLegacyPublishXmlFile />
+    <_PublishTargetUrl>C:\Users\analista\Desktop\sistema2</_PublishTargetUrl>
+  </PropertyGroup>
+  <ItemGroup>
+    <File Include="App_Browsers/qt.browser">
+      <publishTime>10/13/2020 15:14:16</publishTime>
+    </File>
+    <File Include="App_Start/RouteConfig.cs">
+      <publishTime>09/13/2020 17:15:02</publishTime>
+    </File>
+    <File Include="Areas/Admin/AdminAreaRegistration.cs">
+      <publishTime>09/30/2020 22:20:16</publishTime>
+    </File>
+    <File Include="Areas/Admin/Assets/css/admin-style.css">
+      <publishTime>09/13/2020 17:48:42</publishTime>
+    </File>
+    <File Include="Areas/Admin/Assets/css/bootstrap.min.css">
+      <publishTime>09/13/2020 17:48:42</publishTime>
+    </File>
+    <File Include="Areas/Admin/Assets/css/bootstrap.theme.min.css">
+      <publishTime>09/13/2020 17:48:42</publishTime>
+    </File>
+    <File Include="Areas/Admin/Assets/css/font-awesome.min.css">
+      <publishTime>09/13/2020 17:48:42</publishTime>
+    </File>
+    <File Include="Areas/Admin/Assets/fonts/fontawesome-webfont.eot">
+      <publishTime>09/13/2020 17:48:41</publishTime>
+    </File>
+    <File Include="Areas/Admin/Assets/fonts/fontawesome-webfont.svg">
+      <publishTime>09/13/2020 17:48:41</publishTime>
+    </File>
+    <File Include="Areas/Admin/Assets/fonts/fontawesome-webfont.ttf">
+      <publishTime>09/13/2020 17:48:41</publishTime>
+    </File>
+    <File Include="Areas/Admin/Assets/fonts/fontawesome-webfont.woff">
+      <publishTime>09/13/2020 17:48:41</publishTime>
+    </File>
+    <File Include="Areas/Admin/Assets/fonts/fontawesome-webfont.woff2">
+      <publishTime>09/13/2020 17:48:41</publishTime>
+    </File>
+    <File Include="Areas/Admin/Assets/fonts/FontAwesome.otf">
+      <publishTime>09/13/2020 17:48:41</publishTime>
+    </File>
+    <File Include="Areas/Admin/Assets/fonts/glyphicons-halflings-regular.eot">
+      <publishTime>09/13/2020 17:48:41</publishTime>
+    </File>
+    <File Include="Areas/Admin/Assets/fonts/glyphicons-halflings-regular.svg">
+      <publishTime>09/13/2020 17:48:41</publishTime>
+    </File>
+    <File Include="Areas/Admin/Assets/fonts/glyphicons-halflings-regular.ttf">
+      <publishTime>09/13/2020 17:48:41</publishTime>
+    </File>
+    <File Include="Areas/Admin/Assets/fonts/glyphicons-halflings-regular.woff">
+      <publishTime>09/13/2020 17:48:41</publishTime>
+    </File>
+    <File Include="Areas/Admin/Assets/fonts/glyphicons-halflings-regular.woff2">
+      <publishTime>09/13/2020 17:48:41</publishTime>
+    </File>
+    <File Include="Areas/Admin/Assets/images/ajax-loader.gif">
+      <publishTime>09/13/2020 17:48:41</publishTime>
+    </File>
+    <File Include="Areas/Admin/Assets/images/gris.png">
+      <publishTime>10/28/2020 20:33:57</publishTime>
+    </File>
+    <File Include="Areas/Admin/Assets/images/logo unitec.png">
+      <publishTime>04/11/2020 14:33:58</publishTime>
+    </File>
+    <File Include="Areas/Admin/Assets/images/logro1.gif">
+      <publishTime>10/28/2020 18:45:05</publishTime>
+    </File>
+    <File Include="Areas/Admin/Assets/images/logro2.gif">
+      <publishTime>10/28/2020 18:45:05</publishTime>
+    </File>
+    <File Include="Areas/Admin/Assets/images/logro3.gif">
+      <publishTime>10/28/2020 18:45:05</publishTime>
+    </File>
+    <File Include="Areas/Admin/Assets/images/logro4.gif">
+      <publishTime>11/02/2020 08:49:20</publishTime>
+    </File>
+    <File Include="Areas/Admin/Assets/images/logro5.gif">
+      <publishTime>10/28/2020 18:45:05</publishTime>
+    </File>
+    <File Include="Areas/Admin/Assets/images/logro6.gif">
+      <publishTime>10/28/2020 18:45:05</publishTime>
+    </File>
+    <File Include="Areas/Admin/Assets/images/logro7.gif">
+      <publishTime>10/28/2020 18:45:05</publishTime>
+    </File>
+    <File Include="Areas/Admin/Assets/images/logro8.gif">
+      <publishTime>10/28/2020 18:45:05</publishTime>
+    </File>
+    <File Include="Areas/Admin/Assets/images/logro9.jpg">
+      <publishTime>10/28/2020 18:45:05</publishTime>
+    </File>
+    <File Include="Areas/Admin/Assets/js/bootstrap.min.js">
+      <publishTime>09/13/2020 17:48:42</publishTime>
+    </File>
+    <File Include="Areas/Admin/Assets/js/ini.js">
+      <publishTime>09/13/2020 17:48:42</publishTime>
+    </File>
+    <File Include="Areas/Admin/Assets/js/jquery.anexgrid.min.js">
+      <publishTime>09/13/2020 17:48:42</publishTime>
+    </File>
+    <File Include="Areas/Admin/Assets/js/jquery.form.js">
+      <publishTime>09/13/2020 17:48:42</publishTime>
+    </File>
+    <File Include="Areas/Admin/Assets/js/jquery.js">
+      <publishTime>09/13/2020 17:48:42</publishTime>
+    </File>
+    <File Include="Areas/Admin/Assets/js/jquery.validate.min.js">
+      <publishTime>09/13/2020 17:48:42</publishTime>
+    </File>
+    <File Include="Areas/Admin/Assets/js/jquery.validate.unobtrusive.min.js">
+      <publishTime>09/13/2020 17:48:42</publishTime>
+    </File>
+    <File Include="Areas/Admin/Assets/js/moment.min.js">
+      <publishTime>10/11/2020 14:46:05</publishTime>
+    </File>
+    <File Include="Areas/Admin/Controllers/DepartamentosController.cs">
+      <publishTime>09/17/2020 14:58:24</publishTime>
+    </File>
+    <File Include="Areas/Admin/Controllers/DocumentacionController.cs">
+      <publishTime>10/27/2020 20:27:52</publishTime>
+    </File>
+    <File Include="Areas/Admin/Controllers/InicioController.cs">
+      <publishTime>11/02/2020 10:37:45</publishTime>
+    </File>
+    <File Include="Areas/Admin/Controllers/InventarioController.cs">
+      <publishTime>10/27/2020 20:32:30</publishTime>
+    </File>
+    <File Include="Areas/Admin/Controllers/LoginController.cs">
+      <publishTime>10/14/2020 17:15:50</publishTime>
+    </File>
+    <File Include="Areas/Admin/Controllers/PrestamosController.cs">
+      <publishTime>10/27/2020 20:21:48</publishTime>
+    </File>
+    <File Include="Areas/Admin/Controllers/ReportesController.cs">
+      <publishTime>10/27/2020 20:17:30</publishTime>
+    </File>
+    <File Include="Areas/Admin/Controllers/TipoFallaController.cs">
+      <publishTime>09/17/2020 14:58:24</publishTime>
+    </File>
+    <File Include="Areas/Admin/Controllers/TipoInventarioController.cs">
+      <publishTime>10/12/2020 21:46:39</publishTime>
+    </File>
+    <File Include="Areas/Admin/Controllers/UsuarioController.cs">
+      <publishTime>10/28/2020 17:54:24</publishTime>
+    </File>
+    <File Include="Areas/Admin/Controllers/VitacoraController.cs">
+      <publishTime>10/12/2020 21:46:39</publishTime>
+    </File>
+    <File Include="Areas/Admin/Filters/AdminFilters.cs">
+      <publishTime>09/15/2020 15:49:12</publishTime>
+    </File>
+    <File Include="Areas/Admin/Uploads/INDICE ACADEMICO-20201102083318.xls">
+      <publishTime>11/02/2020 08:33:18</publishTime>
+    </File>
+    <File Include="Areas/Admin/Uploads/Libro1-20201003210623.xlsx">
+      <publishTime>10/03/2020 21:06:23</publishTime>
+    </File>
+    <File Include="Areas/Admin/Uploads/Libro1-20201004220354.xlsx">
+      <publishTime>10/04/2020 22:03:54</publishTime>
+    </File>
+    <File Include="Areas/Admin/Uploads/Libro1-20201004221307.xlsx">
+      <publishTime>10/04/2020 22:13:07</publishTime>
+    </File>
+    <File Include="Areas/Admin/Uploads/Libro1-20201010202424.xlsx">
+      <publishTime>10/10/2020 20:24:24</publishTime>
+    </File>
+    <File Include="Areas/Admin/Uploads/Libro1-20201017193911.xlsx">
+      <publishTime>10/17/2020 19:39:11</publishTime>
+    </File>
+    <File Include="Areas/Admin/Uploads/Libro1-20201026155733.xlsx">
+      <publishTime>10/26/2020 15:57:33</publishTime>
+    </File>
+    <File Include="Areas/Admin/Uploads/socratico abril-julio 2020-20201002152011.docx">
+      <publishTime>10/02/2020 15:20:11</publishTime>
+    </File>
+    <File Include="Areas/Admin/Uploads/socratico abril-julio 2020-20201003214105.docx">
+      <publishTime>10/03/2020 21:41:05</publishTime>
+    </File>
+    <File Include="Areas/Admin/Uploads/socratico abril-julio 2020-20201004220440.docx">
+      <publishTime>10/04/2020 22:04:40</publishTime>
+    </File>
+    <File Include="Areas/Admin/Views/Departamentos/Crud.cshtml">
+      <publishTime>11/02/2020 11:51:04</publishTime>
+    </File>
+    <File Include="Areas/Admin/Views/Departamentos/Index.cshtml">
+      <publishTime>10/12/2020 21:43:37</publishTime>
+    </File>
+    <File Include="Areas/Admin/Views/Documentacion/Adjuntos.cshtml">
+      <publishTime>10/13/2020 20:31:18</publishTime>
+    </File>
+    <File Include="Areas/Admin/Views/Documentacion/Crud.cshtml">
+      <publishTime>11/02/2020 11:44:24</publishTime>
+    </File>
+    <File Include="Areas/Admin/Views/Documentacion/Index.cshtml">
+      <publishTime>10/28/2020 16:43:33</publishTime>
+    </File>
+    <File Include="Areas/Admin/Views/Inicio/Index.cshtml">
+      <publishTime>10/28/2020 17:50:33</publishTime>
+    </File>
+    <File Include="Areas/Admin/Views/Inicio/ReporteGeneral.cshtml">
+      <publishTime>10/26/2020 16:48:40</publishTime>
+    </File>
+    <File Include="Areas/Admin/Views/Inventario/Crud.cshtml">
+      <publishTime>11/02/2020 11:46:40</publishTime>
+    </File>
+    <File Include="Areas/Admin/Views/Inventario/Index.cshtml">
+      <publishTime>10/28/2020 16:50:46</publishTime>
+    </File>
+    <File Include="Areas/Admin/Views/Login/Index.cshtml">
+      <publishTime>09/15/2020 16:22:52</publishTime>
+    </File>
+    <File Include="Areas/Admin/Views/Prestamos/Cerrados.cshtml">
+      <publishTime>10/28/2020 16:36:49</publishTime>
+    </File>
+    <File Include="Areas/Admin/Views/Prestamos/Cerrar.cshtml">
+      <publishTime>11/02/2020 11:38:28</publishTime>
+    </File>
+    <File Include="Areas/Admin/Views/Prestamos/Crud.cshtml">
+      <publishTime>11/02/2020 11:38:28</publishTime>
+    </File>
+    <File Include="Areas/Admin/Views/Prestamos/Index.cshtml">
+      <publishTime>10/28/2020 16:33:54</publishTime>
+    </File>
+    <File Include="Areas/Admin/Views/Prestamos/PrestamoCerradoDescripcion.cshtml">
+      <publishTime>10/12/2020 21:09:24</publishTime>
+    </File>
+    <File Include="Areas/Admin/Views/Reportes/CasoCerradoDescripcion.cshtml">
+      <publishTime>10/12/2020 20:40:31</publishTime>
+    </File>
+    <File Include="Areas/Admin/Views/Reportes/Cerrados.cshtml">
+      <publishTime>10/28/2020 16:27:20</publishTime>
+    </File>
+    <File Include="Areas/Admin/Views/Reportes/Cerrar.cshtml">
+      <publishTime>11/02/2020 11:29:36</publishTime>
+    </File>
+    <File Include="Areas/Admin/Views/Reportes/Crud.cshtml">
+      <publishTime>11/02/2020 11:25:26</publishTime>
+    </File>
+    <File Include="Areas/Admin/Views/Reportes/Index.cshtml">
+      <publishTime>10/28/2020 16:55:32</publishTime>
+    </File>
+    <File Include="Areas/Admin/Views/Shared/Layout.cshtml">
+      <publishTime>11/02/2020 11:26:53</publishTime>
+    </File>
+    <File Include="Areas/Admin/Views/TipoFalla/Crud.cshtml">
+      <publishTime>11/02/2020 11:48:19</publishTime>
+    </File>
+    <File Include="Areas/Admin/Views/TipoFalla/Index.cshtml">
+      <publishTime>10/12/2020 21:43:38</publishTime>
+    </File>
+    <File Include="Areas/Admin/Views/TipoInventario/Crud.cshtml">
+      <publishTime>11/02/2020 11:49:05</publishTime>
+    </File>
+    <File Include="Areas/Admin/Views/TipoInventario/Index.cshtml">
+      <publishTime>10/12/2020 21:43:38</publishTime>
+    </File>
+    <File Include="Areas/Admin/Views/Usuario/CambioClave.cshtml">
+      <publishTime>10/28/2020 17:29:32</publishTime>
+    </File>
+    <File Include="Areas/Admin/Views/Usuario/Index.cshtml">
+      <publishTime>10/28/2020 17:32:33</publishTime>
+    </File>
+    <File Include="Areas/Admin/Views/Usuario/Logros.cshtml">
+      <publishTime>11/02/2020 10:20:08</publishTime>
+    </File>
+    <File Include="Areas/Admin/Views/Vitacora/Crud.cshtml">
+      <publishTime>11/02/2020 11:41:59</publishTime>
+    </File>
+    <File Include="Areas/Admin/Views/Vitacora/Index.cshtml">
+      <publishTime>10/11/2020 17:02:48</publishTime>
+    </File>
+    <File Include="Areas/Admin/Views/web.config">
+      <publishTime>09/15/2020 18:07:09</publishTime>
+    </File>
+    <File Include="Areas/Admin/Views/_Viewstart.cshtml">
+      <publishTime>09/13/2020 17:48:57</publishTime>
+    </File>
+    <File Include="bin/App_Browsers.dll">
+      <publishTime>11/04/2020 12:56:59</publishTime>
+    </File>
+    <File Include="bin/App_global.asax.compiled">
+      <publishTime>11/04/2020 12:56:59</publishTime>
+    </File>
+    <File Include="bin/App_global.asax.dll">
+      <publishTime>11/04/2020 12:56:58</publishTime>
+    </File>
+    <File Include="bin/EntityFramework.dll">
+      <publishTime>11/03/2015 17:13:42</publishTime>
+    </File>
+    <File Include="bin/EntityFramework.SqlServer.dll">
+      <publishTime>11/03/2015 17:13:42</publishTime>
+    </File>
+    <File Include="bin/EntityFramework.SqlServer.xml">
+      <publishTime>11/03/2015 17:13:42</publishTime>
+    </File>
+    <File Include="bin/EntityFramework.xml">
+      <publishTime>11/03/2015 17:13:42</publishTime>
+    </File>
+    <File Include="bin/Helper.dll">
+      <publishTime>11/04/2020 12:55:31</publishTime>
+    </File>
+    <File Include="bin/Helper.pdb">
+      <publishTime>11/02/2020 08:14:39</publishTime>
+    </File>
+    <File Include="bin/Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll">
+      <publishTime>06/15/2015 01:36:24</publishTime>
+    </File>
+    <File Include="bin/Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml">
+      <publishTime>06/15/2015 01:36:24</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Web.Infrastructure.dll">
+      <publishTime>04/23/2012 14:53:58</publishTime>
+    </File>
+    <File Include="bin/Model.dll">
+      <publishTime>11/04/2020 12:55:36</publishTime>
+    </File>
+    <File Include="bin/Model.pdb">
+      <publishTime>11/02/2020 08:14:42</publishTime>
+    </File>
+    <File Include="bin/roslyn/csc.exe">
+      <publishTime>06/18/2015 19:49:46</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.Build.Tasks.CodeAnalysis.dll">
+      <publishTime>06/18/2015 19:49:46</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.CodeAnalysis.CSharp.dll">
+      <publishTime>06/18/2015 19:49:46</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.CodeAnalysis.dll">
+      <publishTime>06/18/2015 19:49:44</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.CodeAnalysis.VisualBasic.dll">
+      <publishTime>06/18/2015 19:49:46</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.CSharp.Core.targets">
+      <publishTime>06/18/2015 19:49:46</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.VisualBasic.Core.targets">
+      <publishTime>06/18/2015 19:49:46</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.Collections.Immutable.dll">
+      <publishTime>06/18/2015 19:49:46</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.Reflection.Metadata.dll">
+      <publishTime>06/18/2015 19:49:46</publishTime>
+    </File>
+    <File Include="bin/roslyn/vbc.exe">
+      <publishTime>06/18/2015 19:49:46</publishTime>
+    </File>
+    <File Include="bin/roslyn/VBCSCompiler.exe">
+      <publishTime>06/18/2015 19:49:46</publishTime>
+    </File>
+    <File Include="bin/roslyn/VBCSCompiler.exe.config">
+      <publishTime>06/18/2015 19:49:46</publishTime>
+    </File>
+    <File Include="bin/Rotativa.Core.dll">
+      <publishTime>10/21/2014 17:04:46</publishTime>
+    </File>
+    <File Include="bin/Rotativa.MVC.dll">
+      <publishTime>10/22/2014 11:41:42</publishTime>
+    </File>
+    <File Include="bin/Sistema.dll">
+      <publishTime>11/04/2020 12:55:54</publishTime>
+    </File>
+    <File Include="bin/Sistema.dll.config">
+      <publishTime>11/03/2020 08:54:42</publishTime>
+    </File>
+    <File Include="bin/Sistema.pdb">
+      <publishTime>11/03/2020 09:56:54</publishTime>
+    </File>
+    <File Include="bin/System.Web.Helpers.dll">
+      <publishTime>01/28/2015 03:34:30</publishTime>
+    </File>
+    <File Include="bin/System.Web.Helpers.xml">
+      <publishTime>01/28/2015 03:34:30</publishTime>
+    </File>
+    <File Include="bin/System.Web.Mvc.dll">
+      <publishTime>01/28/2015 03:32:18</publishTime>
+    </File>
+    <File Include="bin/System.Web.Mvc.xml">
+      <publishTime>01/28/2015 03:32:18</publishTime>
+    </File>
+    <File Include="bin/System.Web.Razor.dll">
+      <publishTime>01/28/2015 03:32:32</publishTime>
+    </File>
+    <File Include="bin/System.Web.Razor.xml">
+      <publishTime>01/28/2015 03:32:32</publishTime>
+    </File>
+    <File Include="bin/System.Web.Webpages.Deployment.dll">
+      <publishTime>01/28/2015 03:34:30</publishTime>
+    </File>
+    <File Include="bin/System.Web.Webpages.Deployment.xml">
+      <publishTime>01/28/2015 03:34:30</publishTime>
+    </File>
+    <File Include="bin/System.Web.Webpages.dll">
+      <publishTime>01/28/2015 03:34:30</publishTime>
+    </File>
+    <File Include="bin/System.Web.Webpages.Razor.dll">
+      <publishTime>01/28/2015 03:34:30</publishTime>
+    </File>
+    <File Include="bin/System.Web.Webpages.Razor.xml">
+      <publishTime>01/28/2015 03:34:30</publishTime>
+    </File>
+    <File Include="bin/System.Web.Webpages.xml">
+      <publishTime>01/28/2015 03:34:30</publishTime>
+    </File>
+    <File Include="bin/__browserCapabilitiesCompiler.compiled">
+      <publishTime>11/04/2020 12:56:59</publishTime>
+    </File>
+    <File Include="Controllers/ErrorController.cs">
+      <publishTime>10/31/2020 18:57:29</publishTime>
+    </File>
+    <File Include="Global.asax">
+      <publishTime>09/13/2020 17:15:02</publishTime>
+    </File>
+    <File Include="Global.asax.cs">
+      <publishTime>10/31/2020 18:57:29</publishTime>
+    </File>
+    <File Include="packages.config">
+      <publishTime>10/13/2020 15:14:16</publishTime>
+    </File>
+    <File Include="PrecompiledApp.config">
+      <publishTime>11/04/2020 12:56:37</publishTime>
+    </File>
+    <File Include="Properties/AssemblyInfo.cs">
+      <publishTime>09/13/2020 17:14:59</publishTime>
+    </File>
+    <File Include="Properties/PublishProfiles/Sistema.pubxml">
+      <publishTime>11/04/2020 12:46:17</publishTime>
+    </File>
+    <File Include="Properties/PublishProfiles/Sistema.pubxml.user">
+      <publishTime>11/03/2020 09:57:06</publishTime>
+    </File>
+    <File Include="roslyn/csc.exe">
+      <publishTime>06/18/2015 19:49:46</publishTime>
+    </File>
+    <File Include="roslyn/Microsoft.Build.Tasks.CodeAnalysis.dll">
+      <publishTime>06/18/2015 19:49:46</publishTime>
+    </File>
+    <File Include="roslyn/Microsoft.CodeAnalysis.CSharp.dll">
+      <publishTime>06/18/2015 19:49:46</publishTime>
+    </File>
+    <File Include="roslyn/Microsoft.CodeAnalysis.dll">
+      <publishTime>06/18/2015 19:49:44</publishTime>
+    </File>
+    <File Include="roslyn/Microsoft.CodeAnalysis.VisualBasic.dll">
+      <publishTime>06/18/2015 19:49:46</publishTime>
+    </File>
+    <File Include="roslyn/Microsoft.CSharp.Core.targets">
+      <publishTime>06/18/2015 19:49:46</publishTime>
+    </File>
+    <File Include="roslyn/Microsoft.VisualBasic.Core.targets">
+      <publishTime>06/18/2015 19:49:46</publishTime>
+    </File>
+    <File Include="roslyn/System.Collections.Immutable.dll">
+      <publishTime>06/18/2015 19:49:46</publishTime>
+    </File>
+    <File Include="roslyn/System.Reflection.Metadata.dll">
+      <publishTime>06/18/2015 19:49:46</publishTime>
+    </File>
+    <File Include="roslyn/vbc.exe">
+      <publishTime>06/18/2015 19:49:46</publishTime>
+    </File>
+    <File Include="roslyn/VBCSCompiler.exe">
+      <publishTime>06/18/2015 19:49:46</publishTime>
+    </File>
+    <File Include="roslyn/VBCSCompiler.exe.config">
+      <publishTime>06/18/2015 19:49:46</publishTime>
+    </File>
+    <File Include="Rotativa/wkhtmltopdf.exe">
+      <publishTime>10/13/2020 15:12:28</publishTime>
+    </File>
+    <File Include="Sistema.csproj">
+      <publishTime>10/31/2020 19:03:02</publishTime>
+    </File>
+    <File Include="Sistema.csproj.user">
+      <publishTime>11/03/2020 09:56:46</publishTime>
+    </File>
+    <File Include="Views/Error/ErrorPage.cshtml">
+      <publishTime>10/31/2020 18:56:54</publishTime>
+    </File>
+    <File Include="Views/web.config">
+      <publishTime>09/13/2020 17:15:02</publishTime>
+    </File>
+    <File Include="Web.config">
+      <publishTime>11/04/2020 12:56:00</publishTime>
+    </File>
+    <File Include="Web.Debug.config">
+      <publishTime>09/13/2020 17:15:00</publishTime>
+    </File>
+    <File Include="Web.Release.config">
+      <publishTime>09/13/2020 17:15:00</publishTime>
+    </File>
+  </ItemGroup>
+</Project>

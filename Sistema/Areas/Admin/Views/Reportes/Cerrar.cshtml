@@ -1,0 +1,56 @@
+﻿@model reportes 
+@{
+    //  ViewBag.Title = "cerrar un reporte";
+     
+    List<tipo_falla> tipoFalla = ViewBag.tipoFalla;
+
+}
+
+<div id="yo" class="page">
+
+    <ol class="breadcrumb">
+        <li><a href="~/admin/reportes">Reportes</a></li>
+        <li class="active">"Cerrar caso"</li>
+    </ol>
+
+    @using (Html.BeginForm("CerrarCaso", "reportes", FormMethod.Post))
+    {
+
+        <div>
+
+            @Html.HiddenFor(x => x.idReportes)
+   
+
+            <div class="form-group">
+            @Html.HiddenFor(x => x.estatus, new { Value = "2" })
+            @Html.Label("Fecha de cierre del caso")
+            @Html.EditorFor(x => x.fecha_cierre, "{0:yyyy-MM-dd}", new { htmlAttributes = new { @class = "form-control", @type = "date", @Value = DateTime.Now.ToString("yyyy-MM-dd") } })
+            @Html.ValidationMessageFor(x => x.fecha_cierre, null, new { @class = "label label-danger" })
+            </div>
+            <div class="form-group">
+                @Html.Label("Descripción de la falla")
+                @Html.TextBoxFor(x => x.falla, new { @class = "form-control", placeholder = "fecha_cierre" })
+                @Html.ValidationMessageFor(x => x.falla, null, new { @class = "label label-danger" })
+            </div>
+            <div class="form-group">
+                @Html.Label("¿Como se solucionó?")
+                @Html.TextBoxFor(x => x.solucion, new { @class = "form-control", placeholder = "fecha_cierre" })
+                @Html.ValidationMessageFor(x => x.solucion, null, new { @class = "label label-danger" })
+            </div>
+            <div class="form-group">
+                @Html.Label("Tipo de falla")
+                <select name="idTipoFalla" class="form-control">
+                    @foreach (var p in tipoFalla)
+                    {
+                        <option selected value="@p.idTipoFalla">@p.nombre_falla</option>
+                    }
+                </select>
+            </div>
+            
+        </div>
+
+        <div class="text-right well well-sm">
+            <button data-ajax="true" class="btn btn-primary">Guardar</button>
+        </div>
+    }
+</div>

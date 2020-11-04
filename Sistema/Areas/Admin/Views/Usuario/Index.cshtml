@@ -1,0 +1,79 @@
+﻿@model usuarios
+@{
+    ViewBag.Title = "Usuarios";
+}
+
+<div id="yo" class="page">
+
+
+
+    @using (Html.BeginForm("guardar", "usuario", FormMethod.Post))
+    {
+
+        <div>
+
+            <ul class="nav nav-tabs" role="tablist">
+                <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">Información personal</a></li>
+            </ul>
+
+
+
+            <div class="tab-content">
+                <div role="tabpanel" class="tab-pane active" id="home">
+                    <div class="form-group">
+                        @Html.HiddenFor(x => x.idUsuario)
+                        @Html.LabelFor(x => x.nombre)
+                        @Html.TextBoxFor(x => x.nombre, new { @class = "form-control", placeholder = "Ingrese su nombre" })
+                        @Html.ValidationMessageFor(x => x.nombre, null, new { @class = "label label-danger" })
+                    </div>
+                    <div class="form-group">
+                        @Html.LabelFor(x => x.apellido)
+                        @Html.TextBoxFor(x => x.apellido, new { @class = "form-control", placeholder = "Ingrese su apellido" })
+                        @Html.ValidationMessageFor(x => x.apellido, null, new { @class = "label label-danger" })
+                    </div>
+                    <div class="form-group">
+                        @Html.LabelFor(x => x.correo)
+                        @Html.TextBoxFor(x => x.correo, new { @class = "form-control", placeholder = "Ingrese su correo" })
+                        @Html.ValidationMessageFor(x => x.correo, null, new { @class = "label label-danger" })
+                    </div>
+                    <div class="form-group">
+                        @Html.LabelFor(x => x.fecha_n)
+                        @if (Model.idUsuario > 0)
+                        {
+                            @Html.EditorFor(x => x.fecha_n, "{0:yyyy/MM/dd}", new { htmlAttributes = new { @class = "form-control", @type = "date" } })
+                        }
+                        else
+                        {
+                            @Html.EditorFor(x => x.fecha_n, "{0:yyyy/MM/dd}", new { htmlAttributes = new { @class = "form-control", @type = "date", @Value = DateTime.Now.ToString("yyyy-MM-dd") } })
+                        }
+                        @Html.ValidationMessageFor(x => x.fecha_n, null, new { @class = "label label-danger" })
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+
+        <div class="text-right well well-sm">
+            <button data-ajax="true" class="btn btn-primary">Guardar</button>
+        </div>
+    }
+
+
+    </div>
+
+<div role="tabpanel" class="tab-pane" id="cambiarclave"></div>
+
+<script>
+    $(document).ready(function () {
+        @{
+            <text>
+        CambiarClave();
+            </text>
+        }
+    })
+    function CambiarClave()
+    {
+        $("#cambiarclave").load('@Url.Content("~/admin/usuario/CambioClave")');
+    }
+</script>

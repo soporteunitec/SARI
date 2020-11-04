@@ -1,0 +1,80 @@
+﻿
+@{
+    ViewBag.Title = "Documentos";
+    bool pdf = ViewBag.pdf;
+}
+
+<div id="experiencia" class="page">
+
+    <h1 class="page-header remove-margin">
+@if (pdf == false)
+{
+        <a class="btn btn-primary pull-right" href="~/admin/documentacion/crud">Agregar</a>
+}
+        @ViewBag.Title
+    </h1>
+
+    <div id="list"></div>
+
+@if (pdf == false)
+{
+    <a href="~/admin/documentacion/ExportarPDFdocumentos/" target="_blank" class="btn btn-danger">
+        <i class="fa fa-file-pdf-o"></i> <span class="hidden-xs hidden-sm">Descargar en PDF</span>
+    </a>
+}
+</div>
+
+<script>
+    $(document).ready(function () {
+        var agrid = $("#list").anexGrid({
+            columnas: [
+               { leyenda: 'Id', columna: 'idDocumentacion', ordenable: true },
+               { leyenda: 'Nombre', columna: 'nombre_documento', ordenable: true, filtro: true  },
+               { leyenda: 'Descripción', columna: 'descripcion', ordenable: true },
+               { leyenda: 'Fecha', columna: 'fecha_creacion', ordenable: true },
+               { style: 'width:50px' },
+            ],
+            modelo: [
+                {
+                    propiedad: 'idDocumentacion', formato: function (tr, obj, valor) {
+                        return anexGrid_link({
+                            href: '@Url.Content("~/admin/documentacion/crud/")' + obj.idDocumentacion,
+                            contenido: valor
+                        });
+                    }
+                },
+            { propiedad: 'nombre_documento' },
+            { propiedad: 'descripcion' },
+            { propiedad: 'fecha_creacion', formato: function (tr, obj, valor) { return moment(valor).format("YYYY-MM-DD");} },
+                {
+                    formato: function (tr, obj, valor) {
+                        return anexGrid_link({
+                            href: '@Url.Content("~/admin/documentacion/eliminar/")' + obj.idDocumentacion,
+                            contenido: '<i class="fa fa-trash"></i>',
+                            class: 'btn btn-danger btn-xs btn-block btn-eliminar',
+                        });
+                    }
+                },
+            ],
+            url: '@Url.Content("~/admin/documentacion/listar")',
+            paginable: true,
+            filtrable: true,
+            limite: [20, 60, 100],
+            columna: 'idDocumentacion',
+            columna_orden: 'DESC'
+        });
+
+        agrid.tabla().on('click', '.btn-eliminar', function () {
+            if (!confirm('¿Está seguro de eliminar este registro?'))
+            {
+                return;
+            }
+
+            $.post($(this).attr('href'), function (r) {
+                if (r.response) agrid.refrescar();
+            }, 'json')
+
+            return false;
+        })
+    })
+</script>

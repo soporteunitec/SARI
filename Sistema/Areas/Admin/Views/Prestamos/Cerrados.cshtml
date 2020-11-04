@@ -1,0 +1,68 @@
+﻿@{
+    ViewBag.Title = "Prestamos Cerrados";
+    bool pdf = ViewBag.pdf;
+}
+
+<div id="experiencia" class="page">
+
+    <h1 class="page-header remove-margin">
+        @ViewBag.Title
+    </h1>
+
+    <div id="list"></div>
+    @if (pdf == false)
+            {
+        <a href="~/admin/prestamos/ExportarPDFCerrados/" target="_blank" class="btn btn-danger">
+            <i class="fa fa-file-pdf-o"></i> <span class="hidden-xs hidden-sm">Descargar en PDF</span>
+        </a>
+    }
+</div>
+
+<script>
+    $(document).ready(function () {
+        var agrid = $("#list").anexGrid({
+            columnas: [
+               { leyenda: 'Id', columna: 'idPrestamos', ordenable: true },
+               { leyenda: 'Quien recibe', columna: 'Aquien_presta', ordenable: true, filtro: true },
+               { leyenda: 'nota', columna: 'nota', ordenable: true, filtro: true },
+               { leyenda: 'nota_devolucion', columna: 'nota_devolucion', ordenable: true, filtro: true },
+               { leyenda: 'nombre', columna: 'nombre', ordenable: true, filtro: true },
+               { leyenda: 'Fecha entrega', columna: 'fecha_entrega', ordenable: true },
+               { leyenda: 'fecha devolución', columna: 'fecha_devolucion', ordenable: true },
+               { style: 'width:60px' },
+            ],
+            modelo: [
+                {
+                    propiedad: 'idPrestamos', formato: function (tr, obj, valor) {
+                        return anexGrid_link({
+                            href: '@Url.Content("~/admin/prestamos/PrestamoCerradoDescripcion/")' + obj.idPrestamos,
+                            contenido: valor
+                        });
+                    }
+                },
+            { propiedad: 'Aquien_presta' },
+            { propiedad: 'nota' },
+            { propiedad: 'nota_devolucion' },
+            { propiedad: 'nombre' },
+            { propiedad: 'fecha_entrega', formato: function (tr, obj, valor) { return moment(valor).format("YYYY-MM-DD"); } },
+            { propiedad: 'fecha_devolucion', formato: function (tr, obj, valor) { return moment(valor).format("YYYY-MM-DD"); } },
+            ],
+            url: '@Url.Content("~/admin/prestamos/listarCerrados")',
+            paginable: true,
+            limite: [20, 60, 100],
+            columna: 'idPrestamos',
+            filtrable: true,
+            columna_orden: 'DESC'
+        });
+
+            $.post($(this).attr('href'), function (r) {
+                if (r.response) agrid.refrescar();
+            }, 'json')
+
+            return false;
+    })
+
+
+</script>
+
+

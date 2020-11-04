@@ -1,0 +1,65 @@
+﻿@model vitacora
+@{
+    ViewBag.Title = "Crear vitacora";
+    List<usuarios> usuarios = ViewBag.usuarios;
+
+}
+
+<div id="yo" class="page">
+
+    <ol class="breadcrumb">
+        <li><a href="~/admin/vitacora">Vitacora</a></li>
+        <li class="active">"Nuevo registro"</li>
+    </ol>
+
+    @using (Html.BeginForm("guardar", "vitacora", FormMethod.Post))
+    {
+
+        <div>
+            @Html.HiddenFor(x => x.idVitacora)
+            @if (Model.idUsuario == null)
+            {
+                @Html.HiddenFor(x => x.idUsuario, new { Value = Helper.SessionHelper.GetUser() })
+            }
+            <div class="form-group">
+                @Html.Label("Descripción de la vitacora")
+                @Html.TextAreaFor(x => x.descripcion, new { @class = "form-control", placeholder = "Vitacora" })
+                @Html.ValidationMessageFor(x => x.descripcion, null, new { @class = "label label-danger" })
+            </div>
+            <div class="form-group">
+                @Html.Label("Fecha de la vitacora")
+                @if (Model.idVitacora > 0)
+                {
+                    @Html.EditorFor(x => x.fecha, "{0:yyyy/MM/dd}", new { htmlAttributes = new { @class = "form-control", @type = "date" } })
+                }
+                else
+                {
+                    @Html.EditorFor(x => x.fecha, "{0:yyyy/MM/dd}", new { htmlAttributes = new { @class = "form-control", @type = "date", @Value = DateTime.Now.ToString("yyyy-MM-dd") } })
+                }
+                @Html.ValidationMessageFor(x => x.fecha, null, new { @class = "label label-danger" })
+            </div>
+            
+            @if (Model.idUsuario != null)
+            {
+                <div class="form-group">
+                    @Html.Label("Autor")
+                    <select name="idUsuario" class="form-control">
+                        @foreach (var p in usuarios)
+                    {
+                            <option selected value="@p.idUsuario">@p.nombre</option>
+                        }
+                    </select>
+                </div>
+            }
+
+
+
+
+        </div>
+
+        <div class="text-right well well-sm">
+            <button data-ajax="true" class="btn btn-primary">Guardar</button>
+        </div>
+    }
+</div>
+

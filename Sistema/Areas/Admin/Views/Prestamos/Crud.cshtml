@@ -1,0 +1,70 @@
+﻿@model prestamos
+@{
+    ViewBag.Title = "Crear un prestamo";
+    List<usuarios> usuarios = ViewBag.usuarios;
+
+}
+
+<div id="yo" class="page">
+
+    <ol class="breadcrumb">
+        <li><a href="~/admin/prestamos">Prestamos</a></li>
+        <li class="active">"Nuevo registro"</li>
+    </ol>
+
+    @using (Html.BeginForm("guardar", "prestamos", FormMethod.Post))
+    {
+
+        <div>
+            @Html.HiddenFor(x => x.idPrestamos)
+            @Html.HiddenFor(x => x.estatus, new { Value = "1" })
+            @if (Model.idUsuario == null)
+            {
+                @Html.HiddenFor(x => x.idUsuario, new { Value = Helper.SessionHelper.GetUser() })
+            }
+            <div class="form-group">
+                @Html.Label("¿Quién pide el prestamo?")
+                @Html.TextBoxFor(x => x.Aquien_presta, new { @class = "form-control", placeholder = "Ingrese el nombre de a quien se presta" })
+                @Html.ValidationMessageFor(x => x.Aquien_presta, null, new { @class = "label label-danger" })
+            </div>
+            <div class="form-group">
+                @Html.Label("Fecha de entrega")
+                @if (Model.idPrestamos > 0)
+                {
+                    @Html.EditorFor(x => x.fecha_entrega, "{0:yyyy/MM/dd}", new { htmlAttributes = new { @class = "form-control", @type = "date" } })
+                }
+                else
+                {
+                    @Html.EditorFor(x => x.fecha_entrega, "{0:yyyy/MM/dd}", new { htmlAttributes = new { @class = "form-control", @type = "date", @Value = DateTime.Now.ToString("yyyy-MM-dd") } })
+                }
+                @Html.ValidationMessageFor(x => x.fecha_entrega, null, new { @class = "label label-danger" })
+            </div>
+            <div class="form-group">
+                @Html.Label("Comentario sobre la entrega")
+                @Html.TextAreaFor(x => x.nota, new { @class = "form-control", placeholder = "Nota" })
+                @Html.ValidationMessageFor(x => x.nota, null, new { @class = "label label-danger" })
+            </div>
+           @if (Model.idUsuario != null)
+           {
+                <div class="form-group">
+                    @Html.Label("¿Quién lo atenderá?")
+                    <select name="idUsuario" class="form-control">
+                        @foreach (var p in usuarios)
+                    {
+                            <option selected value="@p.idUsuario">@p.nombre</option>
+                        }
+                    </select>
+                </div>
+            }
+
+
+
+
+        </div>
+
+        <div class="text-right well well-sm">
+            <button data-ajax="true" class="btn btn-primary">Guardar</button>
+        </div>
+    }
+</div>
+

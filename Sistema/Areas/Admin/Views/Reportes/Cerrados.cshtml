@@ -1,0 +1,67 @@
+﻿@{
+    ViewBag.Title = "Reportes Cerrados";
+    bool pdf = ViewBag.pdf;
+}
+
+<div id="experiencia" class="page">
+
+    <h1 class="page-header remove-margin">
+        @ViewBag.Title
+    </h1>
+
+    <div id="list"></div>
+    @if (pdf == false)
+            {
+        <a href="~/admin/reportes/ExportarPDFCerrados/" target="_blank" class="btn btn-danger">
+            <i class="fa fa-file-pdf-o"></i> <span class="hidden-xs hidden-sm">Descargar en PDF</span>
+        </a>
+    }
+
+</div>
+
+<script>
+    $(document).ready(function () {
+        var agrid = $("#list").anexGrid({
+            columnas: [
+               { leyenda: 'Id', columna: 'idReportes', ordenable: true },
+               { leyenda: 'Quien reporta', columna: 'reportado_por', ordenable: true, filtro: true },
+               { leyenda: 'Departamento', columna: 'nombre_dpto', ordenable: true, filtro: true },
+               { leyenda: 'Problema', columna: 'problema_presentado', ordenable: true, filtro: true },
+               { leyenda: 'Atendido por', columna: 'nombre', ordenable: true, filtro: true },
+               { leyenda: 'Fecha', columna: 'fecha_inicio', ordenable: true },
+               { style: 'width:60px' },
+            ],
+            modelo: [
+                {
+                    propiedad: 'idReportes', formato: function (tr, obj, valor) {
+                        return anexGrid_link({
+                            href: '@Url.Content("~/admin/reportes/CasoCerradoDescripcion/")' + obj.idReportes,
+                            contenido: valor
+                        });
+                    }
+                },
+            { propiedad: 'reportado_por' },
+            { propiedad: 'nombre_dpto' },
+            { propiedad: 'problema_presentado' },
+            { propiedad: 'nombre' },
+            { propiedad: 'fecha_inicio', formato: function (tr, obj, valor) { return moment(valor).format("YYYY-MM-DD"); } },
+            ],
+            url: '@Url.Content("~/admin/reportes/listarCerrados")',
+            paginable: true,
+            filtrable: true,
+            limite: [20, 60, 100],
+            columna: 'idReportes',
+            columna_orden: 'DESC'
+        });
+
+            $.post($(this).attr('href'), function (r) {
+                if (r.response) agrid.refrescar();
+            }, 'json')
+
+            return false;
+    })
+
+
+</script>
+
+ 

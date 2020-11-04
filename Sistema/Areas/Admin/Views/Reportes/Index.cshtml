@@ -1,0 +1,99 @@
+﻿
+@{
+    ViewBag.Title = "Reportes";
+    bool pdf = ViewBag.pdf;
+}
+
+<div id="experiencia" class="page">
+
+    <h1 class="page-header remove-margin">
+            @if (pdf == false)
+            {
+                <a class="btn btn-primary pull-right" href="~/admin/Reportes/crud">Agregar</a>
+            }
+            
+            @ViewBag.Title
+    </h1>
+
+
+    <div id="list"></div>
+
+    @if (pdf == false)
+            {
+                <a href="~/admin/reportes/ExportarPDFAbiertos/" target="_blank" class="btn btn-danger">
+                    <i class="fa fa-file-pdf-o"></i> <span class="hidden-xs hidden-sm">Descargar en PDF</span>
+                </a>
+    }
+
+
+</div>
+
+<script>
+    $(document).ready(function () {
+        var agrid = $("#list").anexGrid({
+            columnas: [
+               { leyenda: 'Id', columna: 'idReportes', ordenable: true},
+               { leyenda: 'Quien reporta', columna: 'reportado_por', ordenable: true, filtro: true  },
+               { leyenda: 'Departamento', columna: 'nombre_dpto', ordenable: true, filtro: true },
+               { leyenda: 'Problema', columna: 'problema_presentado', ordenable: true, filtro: true },
+               { leyenda: 'Atendido por', columna: 'nombre', ordenable: true, filtro: true },
+               { leyenda: 'Fecha', columna: 'fecha_inicio', ordenable: true},
+               { style: 'width:50px' },
+            ],
+            modelo: [
+                {
+                    propiedad: 'idReportes', formato: function (tr, obj, valor) {
+                        return anexGrid_link({
+                            href: '@Url.Content("~/admin/reportes/crud/")' + obj.idReportes,
+                            contenido: valor
+                        });
+                    }
+                },
+            { propiedad: 'reportado_por' },
+            { propiedad: 'nombre_dpto' },
+            { propiedad: 'problema_presentado' },
+            { propiedad: 'nombre' },
+            { propiedad: 'fecha_inicio', formato: function (tr, obj, valor) { return moment(valor).format("YYYY-MM-DD"); } },
+                {
+                    formato: function (tr, obj, valor) {
+                        return anexGrid_link({
+                            href: '@Url.Content("~/admin/reportes/eliminar/")' + obj.idReportes,
+                            contenido: '<i class="fa fa-trash"></i>',
+                            class: 'btn btn-danger btn-xs btn-block btn-eliminar',
+                        });
+
+                    }
+
+                },
+                {
+                    formato: function (tr, obj, valor) {
+                        return anexGrid_link({
+                            href: '@Url.Content("~/admin/reportes/Cerrar/")' + obj.idReportes,
+                            contenido: '<i class="glyphicon glyphicon-wrench"></i>',
+                            class: 'btn btn-default btn-xs btn-block',
+                        });
+                    }
+                },
+            ],
+            url: '@Url.Content("~/admin/reportes/listar/")',
+            paginable: true,
+            limite: [20, 60, 100],
+            filtrable: true,
+            columna: 'idReportes',
+            columna_orden: 'DESC'
+        });
+
+        agrid.tabla().on('click', '.btn-eliminar', function () {
+            if (!confirm('¿Está seguro de eliminar este registro?'))
+            {
+                return;
+            }
+
+            $.post($(this).attr('href'), function (r) {
+                if (r.response) agrid.refrescar();
+            }, 'json')
+
+            return false;
+        })
+    })
+</script>

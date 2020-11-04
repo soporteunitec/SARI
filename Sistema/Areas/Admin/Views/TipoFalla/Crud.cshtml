@@ -1,0 +1,29 @@
+﻿@model tipo_falla
+@{
+    ViewBag.Title = "Crud";
+}
+
+<div id="yo" class="page">
+
+    <ol class="breadcrumb">
+        <li><a href="~/admin/tipofalla">Departamentos</a></li>
+        <li class="active">"Nuevo registro"</li>
+    </ol>
+
+    @using (Html.BeginForm("guardar", "tipofalla", FormMethod.Post))
+    {
+
+        <div>
+            @Html.HiddenFor(x => x.idTipoFalla)
+            <div class="form-group">
+                @Html.Label("Nombre de la falla")
+                @Html.TextBoxFor(x => x.nombre_falla, new { @class = "form-control", placeholder = "Ingrese el nombre de la falla" })
+                @Html.ValidationMessageFor(x => x.nombre_falla, null, new { @class = "label label-danger" })
+            </div>
+        </div>
+
+        <div class="text-right well well-sm">
+            <button data-ajax="true" class="btn btn-primary">Guardar</button>
+        </div>
+    }
+</div>

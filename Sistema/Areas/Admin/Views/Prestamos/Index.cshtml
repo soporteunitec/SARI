@@ -1,0 +1,92 @@
+﻿
+@{
+    ViewBag.Title = "Prestamos";
+    bool pdf = ViewBag.pdf;
+}
+
+<div id="experiencia" class="page">
+
+    <h1 class="page-header remove-margin">
+@if (pdf == false)
+{
+        <a class="btn btn-primary pull-right" href="~/admin/prestamos/crud">Agregar</a>
+}
+        @ViewBag.Title
+    </h1>
+
+    <div id="list"></div>
+    @if (pdf == false)
+            {
+        <a href="~/admin/prestamos/ExportarPDFAbiertos/" target="_blank" class="btn btn-danger">
+            <i class="fa fa-file-pdf-o"></i> <span class="hidden-xs hidden-sm">Descargar en PDF</span>
+        </a>
+    }
+
+</div>
+
+<script>
+    $(document).ready(function () {
+        var agrid = $("#list").anexGrid({
+            columnas: [
+               { leyenda: 'Id', columna: 'idPrestamos', ordenable: true },
+               { leyenda: 'Quien recibe', columna: 'Aquien_presta', ordenable: true, filtro: true },
+               { leyenda: 'nota', columna: 'nota', ordenable: true, filtro: true },
+               { leyenda: 'Atendido por', columna: 'nombre', ordenable: true, filtro: true },
+               { leyenda: 'Fecha entrega', columna: 'fecha_entrega', ordenable: true },
+               { style: 'width:50px' },
+            ],
+            modelo: [
+                {
+                    propiedad: 'idPrestamos', formato: function (tr, obj, valor) {
+                        return anexGrid_link({
+                            href: '@Url.Content("~/admin/prestamos/crud/")' + obj.idPrestamos,
+                            contenido: valor
+                        });
+                    }
+                },
+            { propiedad: 'Aquien_presta' },
+            { propiedad: 'nota' },
+            { propiedad: 'nombre' },
+            { propiedad: 'fecha_entrega', formato: function (tr, obj, valor) { return moment(valor).format("YYYY-MM-DD"); } },
+            
+                {
+                    formato: function (tr, obj, valor) {
+                        return anexGrid_link({
+                            href: '@Url.Content("~/admin/prestamos/eliminar/")' + obj.idPrestamos,
+                            contenido: '<i class="fa fa-trash"></i>',
+                            class: 'btn btn-danger btn-xs btn-block btn-eliminar',
+                        });
+                    }
+                },
+                {
+                    formato: function (tr, obj, valor) {
+                        return anexGrid_link({
+                            href: '@Url.Content("~/admin/prestamos/Cerrar/")' + obj.idPrestamos,
+                            contenido: '<i class="glyphicon glyphicon-wrench"></i>',
+                            class: 'btn btn-default btn-xs btn-block',
+                        });
+                    }
+                },
+            ],
+            url: '@Url.Content("~/admin/prestamos/listar/")',
+            paginable: true,
+            limite: [20, 60, 100],
+            filtrable: true,
+            columna: 'idPrestamos',
+            columna_orden: 'DESC'
+        });
+
+        agrid.tabla().on('click', '.btn-eliminar', function () {
+            if (!confirm('¿Está seguro de eliminar este registro?'))
+            {
+                return;
+            }
+
+            $.post($(this).attr('href'), function (r) {
+                if (r.response) agrid.refrescar();
+            }, 'json')
+
+            return false;
+        })
+    })
+</script>

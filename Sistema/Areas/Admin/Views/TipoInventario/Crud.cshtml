@@ -1,0 +1,36 @@
+﻿@model tipoInventario
+@{
+    ViewBag.Title = "Tipo Inventario";
+}
+
+<div id="yo" class="page">
+
+    <ol class="breadcrumb">
+        <li><a href="~/admin/tipoInventario">Tipo Inventario</a></li>
+        <li class="active">"Nuevo registro"</li>
+    </ol>
+
+    @using (Html.BeginForm("guardar", "tipoInventario", FormMethod.Post))
+    {
+
+        <div>
+            @Html.HiddenFor(x => x.idTipoInventario)
+            <div class="form-group">
+                @Html.Label("Tipo de inventario")
+                @Html.TextBoxFor(x => x.nombre_tipo, new { @class = "form-control", placeholder = "Ingrese el nombre" })
+                @Html.ValidationMessageFor(x => x.nombre_tipo, null, new { @class = "label label-danger" })
+            </div>
+            <div class="form-group">
+                @Html.Label("Descripción general")
+                @Html.TextBoxFor(x => x.descripcion, new { @class = "form-control", placeholder = "Ingrese la descripción" })
+                @Html.ValidationMessageFor(x => x.descripcion, null, new { @class = "label label-danger" })
+            </div>
+           
+        </div>
+
+        <div class="text-right well well-sm">
+            <button data-ajax="true" class="btn btn-primary">Guardar</button>
+        </div>
+    }
+</div>
+
